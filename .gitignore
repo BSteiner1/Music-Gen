@@ -1,0 +1,10 @@
+# Ignore checkpoint files
+checkpoint/
+
+# Ignore CPython cache files
+__pycache__/
+*.pyc
+utils/.ipynb_checkpoints/__init__-checkpoint.py
+utils/.ipynb_checkpoints/ExtractData-checkpoint.ipynb
+utils/.ipynb_checkpoints/ExtractData-checkpoint.py
+utils/.ipynb_checkpoints/ProcessData-checkpoint.ipynb

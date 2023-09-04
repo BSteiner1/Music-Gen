@@ -1,6 +1,0 @@
-# Ignore checkpoint files
-checkpoint/
-
-# Ignore CPython cache files
-__pycache__/
-*.pyc
