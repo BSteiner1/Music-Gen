@@ -121,3 +121,21 @@ def clean_sorted_phrases(all_harmonies):
     return cleaned_and_sorted_phrases
 
 #------------------------------------------------------------------------------------------------------------------------------------
+
+def get_cleaned_phrases(path, num_users):
+    """
+    A function that extracts, sorts, and cleans the phrases.
+    
+    Args:
+        - path (str): The path to the JSON file.
+        
+    Returns:
+        - A list of arrays of suitable phrases to use.
+    """
+    
+    all_four_part_harmonies = coconet_harmony(path, num_users)
+    all_cleaned_phrases = clean_sorted_phrases(all_four_part_harmonies)
+    
+    return all_cleaned_phrases
+
+#------------------------------------------------------------------------------------------------------------------------------------
