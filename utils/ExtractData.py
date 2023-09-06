@@ -139,3 +139,52 @@ def get_cleaned_phrases(path, num_users):
     return all_cleaned_phrases
 
 #------------------------------------------------------------------------------------------------------------------------------------
+
+def pitch_and_length(phrase, part):
+    """
+    A function that takes the array and splits a part into lists of note pitch and length.
+    
+    Args:
+        - phrase (tuple): a tuple of lists of the form (pitches, note_start_step, note_end_step, instruments).
+        - part (int): an integer between 0 and 3 (inclusive) to denote which of the four parts.
+        
+    Returns:
+        - Two lists for the note pitch and length.
+    """
+    # Extract a single part of the phrase
+    phrase_part = phrase[part].tolist()
+    
+    # Initialize empty lists for note lengths and unique pitches
+    note_lengths = []
+    pitches = []
+
+    # Initialize variables to track the current note and its length
+    current_note = None
+    current_length = 0
+
+    # Iterate through the original list
+    for pitch in phrase_part:
+        if pitch == current_note:
+            # Increment the length of the current note
+            current_length += 1
+        else:
+            if current_note is not None:
+                # Append the length of the previous note
+                note_lengths.append(current_length)
+                # Append the unique pitch
+                pitches.append(current_note)
+
+            # Start counting a new note
+            current_note = pitch
+            current_length = 1
+
+    # Append the last note's length and unique pitch
+    note_lengths.append(current_length)
+    pitches.append(current_note)
+    
+    # Divide the length by two to represent the number of beats
+    note_lengths = [note_length/2 for note_length in note_lengths]
+    
+    return pitches, note_lengths
+
+#------------------------------------------------------------------------------------------------------------------------------------
