@@ -15,7 +15,7 @@
 * For example, [Lookback and Attention](https://magenta.tensorflow.org/2016/07/15/lookback-rnn-attention-rnn) are methods that can be useful to create long-term structure.
 
 
-### 🔮 For The Future:
+## 🔮 For The Future:
 
 #### 👀 Latent Feature Personalisation
 * We can explore how the latent features affect the characteristics of the music produced.
