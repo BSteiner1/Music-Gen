@@ -4,7 +4,7 @@ import pretty_midi
 
 
 class PhraseToMIDI:
-    def __init__(self, phrase, tempo=120):
+    def __init__(self, phrase, tempo):
         """
         Initialize the PhraseToMIDI object.
 
